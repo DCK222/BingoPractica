@@ -82,7 +82,17 @@ nav a {
     align-items: center;
     justify-content: center;
 }
+#numeroaleatorio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 30%;
+    
+    margin-left: 10%;
+    
 
+}
 #numaleatorio2 {
     font-size: 40px;
     border: 4px solid rgb(255, 255, 255);
@@ -98,26 +108,30 @@ nav a {
     
     
 }
-#numaleatorio{
-
+#cuerpo{
+width: 100%;
+display: flex;
 }
-#numeroaleatorio{
+#contenedorPrincipal {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 5%; /* Ajusta según sea necesario */
+}
 
-}
+
+
 #contendornumeroaleatorio {
-    width: 20%;
-}
-#contenidotexto{
+    width: 100%;
     
 }
+
 #prueba{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    
     
 }
 #startButton, #stopButton {
@@ -131,17 +145,29 @@ nav a {
     justify-content: center;
     flex-direction: column;
     margin-top: 10px;
+    margin-right: 10%;
 }
 
 /* estilos para los cartones */
 #contenedorcartones {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
+    width: 50%;
     margin-top: 5%;
+    margin-right: 10%;
+}
+#yaaparecidos{
+    border: 2px solid white;
+    display: flex;
+    flex-wrap: wrap; /* Permitir envoltura a la siguiente línea */
+    max-width: 300px; /* Ajusta según el ancho máximo deseado */
+    max-height: 200px;
+    overflow-y: auto;
+    gap: 1%;
 }
 
-#carton1 {
+.clasecarton {
     display: flex;
     flex-direction: column;
     border: 3px solid #ffffff;
@@ -150,18 +176,21 @@ nav a {
     color: #ffffff;
 }
 
-.fila {
+.clasecarton .fila {
     display: flex;
     /* gap: 5px; */
 }
-.fila div{
-    min-width: 2rem;
-}
 
-#carton1 div {
+.clasecarton .fila div {
+    min-width: 2rem;
     border: 1px solid #ffffff;
     padding: 10px;
     text-align: center;
 }
 
+@media (max-width: 870px) {
+    #contenedorPrincipal {
+        flex-direction: column;
+    }
+}
 /* fin estilos para los cartones */

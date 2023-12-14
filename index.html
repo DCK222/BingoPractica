@@ -37,149 +37,41 @@
 
     </div>
     <section>
-        <div id="numeroaleatorio">
-            <div id="contendornumeroaleatorio">
-                <div id="prueba">
-                    <div id="bolacolor">
-                        <div id="numaleatorio2">
-                            <h3 id="numaleatorio">0</h3>
+        <div id="contenedorPrincipal">
+            <div id="numeroaleatorio">
+                <div id="contendornumeroaleatorio">
+                    <div id="prueba">
+                        <div id="bolacolor">
+                            <div id="numaleatorio2">
+                                <h3 id="numaleatorio">0</h3>
+                            </div>
+                        </div>
+                        <div id="contendorbotones">
+                            <button id="startButton" onclick="startGeneracion()"><img width="35px"
+                                    src="assets/img/play-1003-svgrepo-com.svg" alt=""></button>
                         </div>
                     </div>
-                    <div id="contendorbotones">
-                        <button id="startButton" onclick="startGeneracion()"><img width="35px"
-                                src="assets/img/play-1003-svgrepo-com.svg" alt=""></button>
-                        <button id="stopButton" onclick="stopGeneracion()"><img width="35px"
-                                src="assets/img/cross-svgrepo-com.svg" alt=""></button>
+                    <div id="CuantosCartones">
+                        <h1>Selecciona los Cartones : </h1>
+                        <select id="cartonSelect" name="select" onchange="generarCartones()">
+                            <option value="1">1 Carton</option>
+                            <option value="2">2 Cartones</option>
+                            <option value="3">3 cartones</option>
+                            <option value="4">4 cartones</option>
+                            <option value="5">5 cartones</option>
+                        </select>
+                    </div>
+                    <div id="numerosalidos">
+
+                        <h1>Numeros : </h1>
+                        <div id="yaaparecidos"></div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="contenedorcartones">
-
-            <div id="cartones">
-
-                <div id="cartonseccion1">
-                    <div class="clasecarton" id="carton1">
-
-                        <div class="fila" id="fila1" >
-                            <div id="fila1_pos1"></div>
-                            <div id="fila1_pos2"></div>
-                            <div id="fila1_pos3"></div>
-                            <div id="fila1_pos4"></div>
-                            <div id="fila1_pos5"></div>
-                            <div id="fila1_pos6"></div>
-                            <div id="fila1_pos7"></div>
-                            <div id="fila1_pos8"></div>
-                            <div id="fila1_pos9"></div>
-                        </div>
-
-
-                        <div class="fila" id="fila2"  >
-                            <div id="fila2_pos1"></div>
-                            <div id="fila2_pos2"></div>
-                            <div id="fila2_pos3"></div>
-                            <div id="fila2_pos4"></div>
-                            <div id="fila2_pos5"></div>
-                            <div id="fila2_pos6"></div>
-                            <div id="fila2_pos7"></div>
-                            <div id="fila2_pos8"></div>
-                            <div id="fila2_pos9"></div>
-                        </div>
-
-                        <div class="fila" id="fila3" >
-                            <div id="fila3_pos1" ></div>
-                            <div id="fila3_pos2" ></div>
-                            <div id="fila3_pos3" ></div>
-                            <div id="fila3_pos4" ></div>
-                            <div id="fila3_pos5" ></div>
-                            <div id="fila3_pos6" ></div>
-                            <div id="fila3_pos7" ></div>
-                            <div id="fila3_pos8" ></div>
-                            <div id="fila3_pos9" ></div>
-                        </div>
-                    </div>
-
-                    <!-- CARTON 2  -->
-
-                    <div id="carton1">
-
-                        <div id="fila1" class="fila">
-                            <div id="fila1_pos1"></div>
-                            <div id="fila1_pos2"></div>
-                            <div id="fila1_pos3"></div>
-                            <div id="fila1_pos4"></div>
-                            <div id="fila1_pos5"></div>
-                            <div id="fila1_pos6"></div>
-                            <div id="fila1_pos7"></div>
-                            <div id="fila1_pos8"></div>
-                            <div id="fila1_pos9"></div>
-                        </div>
-
-
-                        <div id="fila2"  class="fila">
-                            <div id="fila2_pos1"></div>
-                            <div id="fila2_pos2"></div>
-                            <div id="fila2_pos3"></div>
-                            <div id="fila2_pos4"></div>
-                            <div id="fila2_pos5"></div>
-                            <div id="fila2_pos6"></div>
-                            <div id="fila2_pos7"></div>
-                            <div id="fila2_pos8"></div>
-                            <div id="fila2_pos9"></div>
-                        </div>
-
-                        <div id="fila3"  class="fila">
-                            <div id="fila3_pos1" ></div>
-                            <div id="fila3_pos2" ></div>
-                            <div id="fila3_pos3" ></div>
-                            <div id="fila3_pos4" ></div>
-                            <div id="fila3_pos5" ></div>
-                            <div id="fila3_pos6" ></div>
-                            <div id="fila3_pos7" ></div>
-                            <div id="fila3_pos8" ></div>
-                            <div id="fila3_pos9" ></div>
-                        </div>
-                    </div>
-                    <div id="carton1">
-
-                        <div id="fila1" class="fila">
-                            <div id="fila1_pos1"></div>
-                            <div id="fila1_pos2"></div>
-                            <div id="fila1_pos3"></div>
-                            <div id="fila1_pos4"></div>
-                            <div id="fila1_pos5"></div>
-                            <div id="fila1_pos6"></div>
-                            <div id="fila1_pos7"></div>
-                            <div id="fila1_pos8"></div>
-                            <div id="fila1_pos9"></div>
-                        </div>
-
-
-                        <div id="fila2"  class="fila">
-                            <div id="fila2_pos1"></div>
-                            <div id="fila2_pos2"></div>
-                            <div id="fila2_pos3"></div>
-                            <div id="fila2_pos4"></div>
-                            <div id="fila2_pos5"></div>
-                            <div id="fila2_pos6"></div>
-                            <div id="fila2_pos7"></div>
-                            <div id="fila2_pos8"></div>
-                            <div id="fila2_pos9"></div>
-                        </div>
-
-                        <div id="fila3"  class="fila">
-                            <div id="fila3_pos1" ></div>
-                            <div id="fila3_pos2" ></div>
-                            <div id="fila3_pos3" ></div>
-                            <div id="fila3_pos4" ></div>
-                            <div id="fila3_pos5" ></div>
-                            <div id="fila3_pos6" ></div>
-                            <div id="fila3_pos7" ></div>
-                            <div id="fila3_pos8" ></div>
-                            <div id="fila3_pos9" ></div>
-                        </div>
-                    </div>
+            <div id="contenedorcartones">
+                <div id="cartones">
+                    <!-- ... tu contenido existente ... -->
                 </div>
             </div>
         </div>
