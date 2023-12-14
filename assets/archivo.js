@@ -15,6 +15,17 @@ function generarNumero() {
     var yaAparecidosDiv = document.getElementById('yaaparecidos');
     yaAparecidosDiv.innerHTML += '<p>' + numeroAleatorio + '</p>';
 
+    var cartones = document.querySelectorAll('.clasecarton');
+    cartones.forEach(function (carton) {
+        var celdas = carton.querySelectorAll('div');
+        celdas.forEach(function (celda) {
+            var numeroEnCelda = parseInt(celda.innerText);
+            if (numeroEnCelda === numeroAleatorio) {
+                celda.classList.add('marcado');
+            }
+        });
+    });
+
     if (numerosGenerados.length === 89) {
         console.log('ya han salido todos los numeros')
     }

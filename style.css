@@ -147,6 +147,10 @@ display: flex;
     margin-top: 10px;
     margin-right: 10%;
 }
+.marcado {
+    background-color: green;
+    color: white;
+}
 
 /* estilos para los cartones */
 #contenedorcartones {
