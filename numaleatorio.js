@@ -9,7 +9,7 @@ function numeroAleatorioFila1() {
 
         if (!setNumerosSalir.has(numeroSeleccionado)) {
             setNumerosSalir.add(numeroSeleccionado);
-            document.getElementById('#fila1 .fila_pos' + contador).textContent = numeroSeleccionado;
+            document.getElementById('fila1_pos' + contador).textContent = numeroSeleccionado;
             contador++;
         }
     }
