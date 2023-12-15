@@ -1,21 +1,29 @@
 body {
 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
     margin: 0;
     padding: 0;
     background: linear-gradient(90deg, #2c61ff,#00d5ff);
-    animation: animation 3s infinite ease-in-out;
+    animation: animation 3s ease-in-out;
+    
+}
+.destacado{
+    
+        background: linear-gradient(to right, rgb(254, 240, 138), rgb(255, 216, 19), rgb(250, 204, 21));
+        -webkit-background-clip: text;
+        color: transparent;
+        text-decoration: underline;
+        
     
 }
 @keyframes animation{
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
+    from{
+        opacity: 0;
+
+    }to{
+        opacity: 1;
     }
 }
 header {
@@ -61,7 +69,7 @@ nav a {
 }
 
 #homepalabra {
-    color: #005FAC;
+    color: #edf81a;
     font-weight: bold;
 }
 /* -------------------------------------------------------- */
@@ -76,7 +84,7 @@ nav a {
 #bolacolor {
     width: 200px;
     height: 200px;
-    background-color: rgb(255, 0, 0); /* Change the color as needed */
+    background-color: rgb(147, 52, 236); /* Change the color as needed */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -116,7 +124,7 @@ display: flex;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin-top: 5%; /* Ajusta según sea necesario */
+    margin-top: 0%; /* Ajusta según sea necesario */
 }
 
 
@@ -150,25 +158,37 @@ display: flex;
 .marcado {
     background-color: green;
     color: white;
+    
+    
 }
 
 /* estilos para los cartones */
 #contenedorcartones {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
     width: 50%;
-    margin-top: 5%;
-    margin-right: 10%;
+    max-height: 70vh;
+    overflow-y: auto;
 }
-#yaaparecidos{
+
+.contenido {
+    flex: 1;
+    width: 100%;
+}
+
+#yaaparecidos {
     border: 2px solid white;
     display: flex;
-    flex-wrap: wrap; /* Permitir envoltura a la siguiente línea */
-    max-width: 300px; /* Ajusta según el ancho máximo deseado */
+    flex-wrap: wrap;
+    max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
     max-height: 200px;
     overflow-y: auto;
     gap: 1%;
+}
+#cartones{
+    max-height: 70vh;
 }
 
 .clasecarton {
@@ -178,11 +198,11 @@ display: flex;
     padding: 5px;
     margin-top: 5%;
     color: #ffffff;
+    max-width: 100%; /* Asegura que el ancho no exceda el contenedor padre */
 }
 
 .clasecarton .fila {
     display: flex;
-    /* gap: 5px; */
 }
 
 .clasecarton .fila div {
@@ -192,9 +212,133 @@ display: flex;
     text-align: center;
 }
 
-@media (max-width: 870px) {
-    #contenedorPrincipal {
+
+
+/* fin estilos para los cartones */
+/* estilos para scrollbarc: */
+
+#contenedorcartones::-webkit-scrollbar-thumb {
+    background-color: #4CAF50; /* Color del thumb (barra deslizadora) */
+    border-radius: 6px; /* Borde redondeado del thumb */
+}
+
+#contenedorcartones::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color de fondo del scrollbar */
+}
+/* fin estilos scrollbar */
+
+/* RESPONSIVE */
+@media (min-width: 390px) and (max-width: 767px) {
+    body{
+        font-size: 15px;
+    }
+    #contenidotexto{
+        margin-bottom: 5%;
+    }
+    #contenedorPrincipal{
+
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
     }
+    #contenedornumeroaleatorio{
+   
+    }
+    #numeroaleatorio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+    }
+    #prueba{
+        display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: row;
+    }
+    #numerosalidos{
+        width: 70%;
+        
+    }
+    #contenedorcartones {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        max-height: 60vh;
+        overflow-y: auto;
+        font-size: 12px;
+    }
+    #contenedorcartones div {
+        margin:1px ; /* O el valor que desees */
+        padding: 1px; /* O el valor que desees */
+    }
+    
+    .contenido {
+        flex: 1;
+        width: 100%;
+    }
+    
 }
-/* fin estilos para los cartones */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body{
+        font-size: 15px;
+    }
+    #contenidotexto{
+        margin-bottom: 5%;
+    }
+    #contenedorPrincipal{
+
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #contenedornumeroaleatorio{
+   
+    }
+    #numeroaleatorio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+    }
+    #prueba{
+        display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: row;
+    }
+    #numerosalidos{
+        width: 70%;
+        
+    }
+    #contenedorcartones {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        max-height: 60vh;
+        overflow-y: auto;
+        font-size: 20px;
+    }
+    #contenedorcartones div {
+        margin:3px ; /* O el valor que desees */
+        padding: 3px; /* O el valor que desees */
+    }
+    
+    .contenido {
+        flex: 1;
+        width: 100%;
+    }
+    
+}
