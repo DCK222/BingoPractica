@@ -187,14 +187,6 @@ display: flex;
     flex: 1;
     width: 100%;
 }
-#contenedorcartones::-webkit-scrollbar-thumb {
-    background-color: #6200ff; /* Color del thumb (barra deslizadora) */
-    border-radius: 2px; /* Borde redondeado del thumb */
-}
-
-#contenedorcartones::-webkit-scrollbar-track {
-    background-color: #f1f1f100; /* Color de fondo del scrollbar */
-}
 #yaaparecidos {
     border: 2px solid white;
     display: flex;
@@ -234,6 +226,17 @@ display: flex;
 /* fin estilos para los cartones */
 /* RESPONSIVE */
 @media (min-width: 330px) and (max-width: 799px) {
+    header{
+        padding-top: 0px;
+    }
+    #banner {
+        
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5%;
+    }
     body{
         font-size: 15px;
     }
