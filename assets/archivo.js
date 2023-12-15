@@ -25,6 +25,17 @@ function generarNumero() {
             }
         });
     });
+    function verificarLinea(carton) {
+        // Verificar si todos los elementos de alguna fila están marcados en verde
+        var filas = carton.querySelectorAll('.fila');
+        filas.forEach(function (fila) {
+            var celdas = fila.querySelectorAll('div');
+            if (Array.from(celdas).every(celda => celda.classList.contains('marcado'))) {
+                console.log('¡Línea en el cartón!');
+                // Puedes realizar acciones adicionales aquí, como mostrar un mensaje o ejecutar una función.
+            }
+        });
+    }
 
     if (numerosGenerados.length === 89) {
         console.log('ya han salido todos los numeros')
@@ -65,6 +76,7 @@ function generarCartones() {
         contenedorCartones.appendChild(nuevoCarton);
     }
 }
+
 
 function generarNumerosAleatoriosOrdenados(min, max, cantidad) {
     var numeros = [];
