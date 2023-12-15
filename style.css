@@ -9,6 +9,15 @@ body {
     animation: animation 3s ease-in-out;
     
 }
+#cartonSelect{
+    background-color: #00d5ff00;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 140px;
+    height: 40px;
+}
 .destacado{
     
         background: linear-gradient(to right, rgb(254, 240, 138), rgb(255, 216, 19), rgb(250, 204, 21));
@@ -173,11 +182,19 @@ display: flex;
     overflow-y: auto;
 }
 
+
 .contenido {
     flex: 1;
     width: 100%;
 }
+#contenedorcartones::-webkit-scrollbar-thumb {
+    background-color: #6200ff; /* Color del thumb (barra deslizadora) */
+    border-radius: 2px; /* Borde redondeado del thumb */
+}
 
+#contenedorcartones::-webkit-scrollbar-track {
+    background-color: #f1f1f100; /* Color de fondo del scrollbar */
+}
 #yaaparecidos {
     border: 2px solid white;
     display: flex;
@@ -215,18 +232,6 @@ display: flex;
 
 
 /* fin estilos para los cartones */
-/* estilos para scrollbarc: */
-
-#contenedorcartones::-webkit-scrollbar-thumb {
-    background-color: #4CAF50; /* Color del thumb (barra deslizadora) */
-    border-radius: 6px; /* Borde redondeado del thumb */
-}
-
-#contenedorcartones::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Color de fondo del scrollbar */
-}
-/* fin estilos scrollbar */
-
 /* RESPONSIVE */
 @media (min-width: 330px) and (max-width: 799px) {
     body{
@@ -282,6 +287,15 @@ display: flex;
     .contenido {
         flex: 1;
         width: 100%;
+    }
+    #yaaparecidos {
+        border: 2px solid white;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+        max-height: 50px;
+        overflow-y: auto;
+        gap: 1%;
     }
     
 }
@@ -339,6 +353,15 @@ display: flex;
     .contenido {
         flex: 1;
         width: 100%;
+    }
+    #yaaparecidos {
+        border: 2px solid white;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+        max-height: 200px;
+        overflow-y: auto;
+        gap: 1%;
     }
     
 }
