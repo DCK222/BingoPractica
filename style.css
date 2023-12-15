@@ -228,7 +228,7 @@ display: flex;
 /* fin estilos scrollbar */
 
 /* RESPONSIVE */
-@media (min-width: 390px) and (max-width: 767px) {
+@media (min-width: 390px) and (max-width: 799px) {
     body{
         font-size: 15px;
     }
@@ -285,7 +285,7 @@ display: flex;
     }
     
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 800px) and (max-width: 1024px) {
     body{
         font-size: 15px;
     }
