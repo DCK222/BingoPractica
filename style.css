@@ -221,7 +221,27 @@ display: flex;
     text-align: center;
 }
 
+#contenedorcartones,
+#yaaparecidos {
+    overflow-y: auto;
+    scrollbar-width: thin; /* Para Firefox */
+}
 
+#contenedorcartones::-webkit-scrollbar,
+#yaaparecidos::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari) */
+}
+
+#contenedorcartones::-webkit-scrollbar-thumb,
+#yaaparecidos::-webkit-scrollbar-thumb {
+    background-color: #ae2cff; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 5gitpx; /* Redondear esquinas del pulgar de la barra de desplazamiento */
+}
+
+#contenedorcartones::-webkit-scrollbar-track,
+#yaaparecidos::-webkit-scrollbar-track {
+    background-color: #ffffff75; /* Color del riel de la barra de desplazamiento */
+}
 
 /* fin estilos para los cartones */
 /* RESPONSIVE */
