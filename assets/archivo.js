@@ -1,54 +1,84 @@
-var numerosGenerados = [];
+var numerosGeneradosGlobal = new Set();
 var generacionInterval;
+var primerBingoCantado = false;
 
 function generarNumero() {
+    if (primerBingoCantado) {
+        clearInterval(generacionInterval);
+        return;
+    }
+
     var numeroAleatorio;
 
     do {
-        numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-    } while (numerosGenerados.includes(numeroAleatorio));
+        numeroAleatorio = Math.floor(Math.random() * 90) + 1;
+    } while (numerosGeneradosGlobal.has(numeroAleatorio));
 
-    numerosGenerados.push(numeroAleatorio);
+    numerosGeneradosGlobal.add(numeroAleatorio);
     document.getElementById('numaleatorio').innerText = numeroAleatorio;
 
-    // Agregar el número al div "yaaparecidos"
     var yaAparecidosDiv = document.getElementById('yaaparecidos');
     yaAparecidosDiv.innerHTML += '<p>' + numeroAleatorio + '</p>';
 
     var cartones = document.querySelectorAll('.clasecarton');
     cartones.forEach(function (carton) {
-        var celdas = carton.querySelectorAll('div');
-        celdas.forEach(function (celda) {
-            var numeroEnCelda = parseInt(celda.innerText);
-            if (numeroEnCelda === numeroAleatorio) {
-                celda.classList.add('marcado');
-            }
-        });
+        marcarCelda(carton, numeroAleatorio);
+        verificarBingo(carton);
+        verificarLinea(carton);
     });
-    function verificarLinea(carton) {
-        // Verificar si todos los elementos de alguna fila están marcados en verde
-        var filas = carton.querySelectorAll('.fila');
-        filas.forEach(function (fila) {
-            var celdas = fila.querySelectorAll('div');
-            if (Array.from(celdas).every(celda => celda.classList.contains('marcado'))) {
-                console.log('¡Línea en el cartón!');
-                // Puedes realizar acciones adicionales aquí, como mostrar un mensaje o ejecutar una función.
-            }
-        });
+
+    if (numerosGeneradosGlobal.size === 90) {
+        console.log('Ya han salido todos los números');
+        clearInterval(generacionInterval);
+    }
+}
+
+function marcarCelda(carton, numero) {
+    var celdas = carton.querySelectorAll('div');
+    celdas.forEach(function (celda) {
+        var numeroEnCelda = parseInt(celda.innerText);
+        if (numeroEnCelda === numero) {
+            celda.classList.add('marcado');
+        }
+    });
+}
+
+function verificarBingo(carton) {
+    if (primerBingoCantado) {
+        return;
     }
 
-    if (numerosGenerados.length === 89) {
-        console.log('ya han salido todos los numeros')
+    var celdas = carton.querySelectorAll('.clasecarton div');
+    if (Array.from(celdas).every(celda => celda.classList.contains('marcado'))) {
+        document.getElementById('cantar').innerText = '¡HAN CANTADO BINGO!';
+        primerBingoCantado = true;
     }
+}
+
+function verificarLinea(carton) {
+    var filas = carton.querySelectorAll('.fila');
+    filas.forEach(function (fila) {
+        var celdas = fila.querySelectorAll('div');
+        var lineaCantada = true;
+
+        celdas.forEach(function (celda) {
+            if (!celda.classList.contains('marcado')) {
+                lineaCantada = false;
+            }
+        });
+
+        if (lineaCantada) {
+            document.getElementById('cantar').innerText = '¡HAN CANTADO LÍNEA!';
+        }
+    });
 }
 
 function startGeneracion() {
-    generacionInterval = setInterval(generarNumero, 500);
+    generacionInterval = setInterval(generarNumero, 400);
 }
 
-// generar cartones 
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Llama a la función para generar el número de cartones inicial
     generarCartones();
 });
 
@@ -62,35 +92,52 @@ function generarCartones() {
         nuevoCarton.id = "cartonseccion" + i;
         nuevoCarton.innerHTML = `
         <div class="clasecarton carton${i}">
-        <div class="fila" id="fila1">
-            ${generarNumerosAleatoriosOrdenados(1, 30, 9)}
+            <div class="fila" id="fila1">
+                ${generarNumerosAleatoriosOrdenados(1, 30, 9)}
+            </div>
+            <div class="fila" id="fila2">
+                ${generarNumerosAleatoriosOrdenados(31, 60, 9)}
+            </div>
+            <div class="fila" id="fila3">
+                ${generarNumerosAleatoriosOrdenados(61, 90, 9)}
+            </div>
         </div>
-        <div class="fila" id="fila2">
-            ${generarNumerosAleatoriosOrdenados(31, 60, 9)}
-        </div>
-        <div class="fila" id="fila3">
-            ${generarNumerosAleatoriosOrdenados(61, 90, 9)}
-        </div>
-    </div>
         `;
         contenedorCartones.appendChild(nuevoCarton);
     }
 }
 
-
 function generarNumerosAleatoriosOrdenados(min, max, cantidad) {
     var numeros = [];
-    for (var i = 0; i < cantidad; i++) {
+    while (numeros.length < cantidad) {
         var numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
-        numeros.push(numeroAleatorio);
+        if (numeros.indexOf(numeroAleatorio) === -1) {
+            numeros.push(numeroAleatorio);
+        }
     }
     numeros.sort(function(a, b) {
         return a - b;
     });
-
     return numeros.map(function(numero) {
         return `<div>${numero}</div>`;
     }).join('');
 }
 
+var numerosGeneradosGlobal = new Set();
+var generacionInterval;
 
+function resetJuego() {
+    // Detener la generación de números
+    clearInterval(generacionInterval);
+
+    // Reiniciar el contador
+    numerosGeneradosGlobal.clear();
+    document.getElementById('numaleatorio').innerText = '0';
+
+    // Quitar los cartones
+    var contenedorCartones = document.getElementById("cartones");
+    contenedorCartones.innerHTML = "";
+
+    // Reiniciar el contenido de yaaparecidos
+    document.getElementById('yaaparecidos').innerHTML = '';
+}

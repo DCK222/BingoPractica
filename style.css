@@ -29,6 +29,20 @@ body {
     width: 140px;
     height: 40px;
 }
+#resetButton{
+    background-color: #00d5ff00;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 140px;
+    height: 40px;
+}
+#cantar{
+width: 400px;
+margin-left: 8%;
+font-size: 20px;
+}
 .destacado{
     
         background: linear-gradient(to right, rgb(254, 240, 138), rgb(255, 216, 19), rgb(250, 204, 21));
