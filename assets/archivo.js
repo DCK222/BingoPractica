@@ -2,6 +2,22 @@ var numerosGeneradosGlobal = new Set();
 var generacionInterval;
 var primerBingoCantado = false;
 
+function verificarLinea(carton) {
+    if (primerBingoCantado) {
+        return;
+    }
+
+    var filas = carton.querySelectorAll('.clasecarton .fila');
+    filas.forEach(function (fila) {
+        var celdas = fila.querySelectorAll('div');
+        var todasMarcadas = Array.from(celdas).every(celda => celda.classList.contains('marcado'));
+        if (todasMarcadas) {
+            document.getElementById('cantar').innerText = '¡HAN CANTADO LÍNEA!';
+        }
+    });
+}
+
+// Modifica la función generarNumero para llamar a verificarLinea
 function generarNumero() {
     if (primerBingoCantado) {
         clearInterval(generacionInterval);
@@ -24,7 +40,7 @@ function generarNumero() {
     cartones.forEach(function (carton) {
         marcarCelda(carton, numeroAleatorio);
         verificarBingo(carton);
-        verificarLinea(carton);
+        verificarLinea(carton); // Añade esta línea para verificar la línea
     });
 
     if (numerosGeneradosGlobal.size === 90) {
@@ -32,14 +48,18 @@ function generarNumero() {
         clearInterval(generacionInterval);
     }
 }
-
 function marcarCelda(carton, numero) {
-    var celdas = carton.querySelectorAll('div');
-    celdas.forEach(function (celda) {
-        var numeroEnCelda = parseInt(celda.innerText);
-        if (numeroEnCelda === numero) {
-            celda.classList.add('marcado');
-        }
+    var filas = carton.querySelectorAll('.fila');
+    filas.forEach(function (fila) {
+        var celdas = fila.querySelectorAll('div');
+        
+        celdas.forEach(function (celda) {
+            var numeroEnCelda = parseInt(celda.innerText);
+            if (numeroEnCelda === numero) {
+                celda.classList.add('marcado');
+                
+            }
+        });
     });
 }
 
@@ -48,33 +68,20 @@ function verificarBingo(carton) {
         return;
     }
 
-    var celdas = carton.querySelectorAll('.clasecarton div');
-    if (Array.from(celdas).every(celda => celda.classList.contains('marcado'))) {
+    var filas = carton.querySelectorAll('.clasecarton .fila');
+    var bingoCompleto = Array.from(filas).every(fila => {
+        var celdas = fila.querySelectorAll('div');
+        return Array.from(celdas).every(celda => celda.classList.contains('marcado'));
+    });
+
+    if (bingoCompleto) {
         document.getElementById('cantar').innerText = '¡HAN CANTADO BINGO!';
         primerBingoCantado = true;
     }
 }
 
-function verificarLinea(carton) {
-    var filas = carton.querySelectorAll('.fila');
-    filas.forEach(function (fila) {
-        var celdas = fila.querySelectorAll('div');
-        var lineaCantada = true;
-
-        celdas.forEach(function (celda) {
-            if (!celda.classList.contains('marcado')) {
-                lineaCantada = false;
-            }
-        });
-
-        if (lineaCantada) {
-            document.getElementById('cantar').innerText = '¡HAN CANTADO LÍNEA!';
-        }
-    });
-}
-
 function startGeneracion() {
-    generacionInterval = setInterval(generarNumero, 400);
+    generacionInterval = setInterval(generarNumero, 300);
 }
 
 
@@ -123,8 +130,7 @@ function generarNumerosAleatoriosOrdenados(min, max, cantidad) {
     }).join('');
 }
 
-var numerosGeneradosGlobal = new Set();
-var generacionInterval;
+
 
 function resetJuego() {
     // Detener la generación de números
@@ -134,10 +140,24 @@ function resetJuego() {
     numerosGeneradosGlobal.clear();
     document.getElementById('numaleatorio').innerText = '0';
 
+    // Quitar las clases 'marcado' de todas las celdas en todos los cartones
+    var cartones = document.querySelectorAll('.clasecarton');
+    cartones.forEach(function (carton) {
+        var celdas = carton.querySelectorAll('.marcado');
+        celdas.forEach(function (celda) {
+            celda.classList.remove('marcado');
+        });
+    });
+
     // Quitar los cartones
     var contenedorCartones = document.getElementById("cartones");
-    contenedorCartones.innerHTML = "";
+    contenedorCartones.innerHTML = '';
 
     // Reiniciar el contenido de yaaparecidos
     document.getElementById('yaaparecidos').innerHTML = '';
+
+    // Reiniciar el mensaje de bingo
+    document.getElementById('cantar').innerText = '';
+
+    primerBingoCantado = false;
 }
