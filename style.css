@@ -1,65 +1,35 @@
+/* AÑADIMOS LA FUENTE INGRESADA */
 @font-face {
-    font-family:"Cansao" ;
+    font-family: "Cansao";
     src: url("assets/fuentes/MartianMono-Bold.woff2");
 }
+
+/* ESTILOS GENERALES PARA EL BODY */
 body {
 
-    font-family:'Cansao';
+    font-family: 'Cansao';
     font-weight: bold;
     font-size: 25px;
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg,#232526,#414345  );
+    background: linear-gradient(90deg, #232526, #414345);
     animation: animation 3s ease-in-out;
     color: #ffffff;
 
+}
 
-    
-}
-#contenedorcartones div {
-    margin:3px ; /* O el valor que desees */
-    padding: 3px; /* O el valor que desees */
-}
-#cartonSelect{
-    background-color: #00d5ff00;
-    border: 3px solid white;
-    border-radius: 5px;
-    color: #ffffff;
-    font-weight: bold;
-    width: 140px;
-    height: 40px;
-}
-#resetButton{
-    background-color: #00d5ff00;
-    border: 3px solid white;
-    border-radius: 5px;
-    color: #ffffff;
-    font-weight: bold;
-    width: 140px;
-    height: 40px;
-}
-#cantar{
-width: 400px;
-margin-left: 8%;
-font-size: 20px;
-}
-.destacado{
-    
-        background: linear-gradient(to right, rgb(254, 240, 138), rgb(255, 216, 19), rgb(250, 204, 21));
-        -webkit-background-clip: text;
-        color: transparent;
-        text-decoration: underline;
-        
-    
-}
-@keyframes animation{
-    from{
+/* AÑADIMOS ANIMACION AL ABRIR LA PAGINA */
+@keyframes animation {
+    from {
         opacity: 0;
 
-    }to{
+    }
+
+    to {
         opacity: 1;
     }
 }
+/* ESTILOS PARA EL HEADER */
 header {
     background-color: #ffffff00;
     color: rgb(255, 255, 255);
@@ -72,9 +42,9 @@ header {
     width: 100%;
     z-index: 1000;
 }
-#titulo{
+#titulo {
     letter-spacing: 0.05em;
-    
+
 }
 
 #logo {
@@ -110,39 +80,88 @@ nav a {
     color: #edf81a;
     font-weight: bold;
 }
-/* -------------------------------------------------------- */
+/* --------- FIN DE LOS ESTILOS DEL HEADER ----------- */
 
-#banner{
+/* ESTILOS PARA DIV DEL CONTENEDOR DE LOS CARTONES */
+#contenedorcartones div {
+    margin: 3px;
+    padding: 3px;
+}
+
+#cartonSelect {
+    background-color: #00d5ff00;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 140px;
+    height: 40px;
+}
+
+/* ESTILOS PARA EL BOTON DE RESET */
+#resetButton {
+    background-color: #00d5ff00;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 140px;
+    height: 40px;
+}
+
+/* ESTILOS PARA EL DIV CANTAR DONDE APARECEN LOS MENSAJES DE BINGO O LINEA */
+#cantar {
+    width: 400px;
+    margin-left: 8%;
+    font-size: 20px;
+}
+
+.destacado {
+
+    background: linear-gradient(to right, rgb(254, 240, 138), rgb(255, 216, 19), rgb(250, 204, 21));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: underline;
+
+
+}
+
+/* ESTILOS PARA EL BANNER DEL TITULO DCKBINGO */
+#banner {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5%;
 }
+/* ESTILOS PARA LA BOLA DE BINGO NUMEROS ALEATORIOS */
 #bolacolor {
     width: 200px;
     height: 200px;
-    background-color: rgb(147, 52, 236); /* Change the color as needed */
+    background-color: rgb(147, 52, 236);
+    /* Change the color as needed */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
-#numeroaleatorio{
+
+#numeroaleatorio {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     width: 30%;
-    
+
     margin-left: 10%;
-    
+
 
 }
-#numaleatorio{
+#numaleatorio {
     color: #232526;
 }
+
 #numaleatorio2 {
     font-size: 40px;
     border: 4px solid rgb(255, 255, 255);
@@ -155,41 +174,34 @@ nav a {
     align-items: center;
     justify-content: center;
 
-    
-    
 }
-#cuerpo{
-width: 100%;
-display: flex;
-}
+/* ----------FIN DE LOS ESTILOS DE LA BOLA DE NUMEROS ALEATORIAS-------------- */
+/* ESTILOS PARA EL CONTENEDOR INICIAL */
 #contenedorPrincipal {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin-top: 0%; /* Ajusta según sea necesario */
+    margin-top: 0%;
+    /* Ajusta según sea necesario */
 }
-
-
-
 #contendornumeroaleatorio {
     width: 100%;
-    
 }
-
-#prueba{
+#prueba {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    
-    
 }
-#startButton, #stopButton {
-    margin-right: 10px; 
+/* -------------------------------------------------------------------------------- */
+/* ESTILOS PARA EL BOTON DE ININCIO GENERADOR DE NUMEROS */
+#startButton{
+    margin-right: 10px;
     border: 0;
     background-color: #ffffff00;
 }
-#contendorbotones{
+/* ESTILOS PARA EL CONTENEDOR DE LOS BOTONES */
+#contendorbotones {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,14 +209,15 @@ display: flex;
     margin-top: 10px;
     margin-right: 10%;
 }
+
+/* ESTILOS PARA EÑ COLOR DE LA CASILLA MARCADA */
 .marcado {
     background-color: green;
     color: white;
-    
-    
+
 }
 
-/* estilos para los cartones */
+/* ------------------------------ INICIO ESTILOS PARA LOS CARTONES CONTENEDOR --------------------------------*/
 #contenedorcartones {
     display: flex;
     flex-direction: column;
@@ -220,16 +233,19 @@ display: flex;
     flex: 1;
     width: 100%;
 }
+
 #yaaparecidos {
     border: 2px solid white;
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+    max-width: 100%;
+    /* Cambiado a 100% para ocupar todo el ancho disponible */
     max-height: 200px;
     overflow-y: auto;
     gap: 1%;
 }
-#cartones{
+
+#cartones {
     max-height: 70vh;
 }
 
@@ -240,7 +256,7 @@ display: flex;
     padding: 5px;
     margin-top: 5%;
     color: #ffffff;
-    max-width: 100%; /* Asegura que el ancho no exceda el contenedor padre */
+    max-width: 100%;
 }
 
 .clasecarton .fila {
@@ -257,78 +273,89 @@ display: flex;
 #contenedorcartones,
 #yaaparecidos {
     overflow-y: auto;
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
 }
+/* ---------------------------FIN INICIO ESTILOS PARA LOS CARTONES CONTENEDOR --------------------------------*/
 
+/* --------------------------INICIO ESTILOS PARA EL SCROLLBAR DE LOS CONTENEDORES --------------------------- */
 #contenedorcartones::-webkit-scrollbar,
 #yaaparecidos::-webkit-scrollbar {
-    width: 12px; 
+    width: 12px;
 }
 
 #contenedorcartones::-webkit-scrollbar-thumb,
 #yaaparecidos::-webkit-scrollbar-thumb {
-    background-color: #ae2cff; 
-    border-radius: 5px; 
+    background-color: #ae2cff;
+    border-radius: 5px;
 }
 
 #contenedorcartones::-webkit-scrollbar-track,
 #yaaparecidos::-webkit-scrollbar-track {
-    background-color: #ffffff75; /* Color del riel de la barra de desplazamiento */
+    background-color: #ffffff75;
+    /* Color del riel de la barra de desplazamiento */
 }
-/* titulos */
-#seleccionar{
+/* ----------------------FIN INICIO ESTILOS PARA EL SCROLLBAR DE LOS CONTENEDORES --------------------------- */
+
+/* ESTILO PARA EL TITULO */
+#seleccionar {
     font-size: 25px;
-    
 }
-/* fin titulos */
-/* fin estilos para los cartones */
-/* RESPONSIVE */
+
+
+/*---------------------INICIO RESPONSIVE PARA MOVIL -------------------------------*/
 @media (min-width: 330px) and (max-width: 799px) {
-    header{
+    header {
         padding-top: 0px;
     }
+
     #banner {
-        
+
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 5%;
     }
-    body{
+
+    body {
         font-size: 15px;
     }
-    #contenidotexto{
+
+    #contenidotexto {
         margin-bottom: 5%;
     }
-    #contenedorPrincipal{
 
-        
+    #contenedorPrincipal {
+
+
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    #contenedornumeroaleatorio{
-   
-    }
-    #numeroaleatorio{
+
+    #contenedornumeroaleatorio {}
+
+    #numeroaleatorio {
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         width: 100%;
     }
-    #prueba{
+
+    #prueba {
         display: flex;
-    align-items: center;
-    justify-content:center;
-    flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
     }
-    #numerosalidos{
+
+    #numerosalidos {
         width: 70%;
-        
+
     }
+
     #contenedorcartones {
         box-sizing: border-box;
         display: flex;
@@ -340,61 +367,75 @@ display: flex;
         overflow-y: auto;
         font-size: 20px;
     }
+
     #contenedorcartones div {
-        margin:1px ; /* O el valor que desees */
-        padding: 1px; /* O el valor que desees */
+        margin: 1px;
+        /* O el valor que desees */
+        padding: 1px;
+        /* O el valor que desees */
     }
-    
+
     .contenido {
         flex: 1;
         width: 100%;
     }
+
     #yaaparecidos {
         border: 2px solid white;
         display: flex;
         flex-wrap: wrap;
-        max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+        max-width: 100%;
+        /* Cambiado a 100% para ocupar todo el ancho disponible */
         max-height: 50px;
         overflow-y: auto;
         gap: 1%;
     }
-    
+
 }
+/* ------------------FIN RESPONSIVE PARA MOVIL --------------------*/
+
+/*---------------------INICIO RESPONSIVE PARA TABLET -------------------------------*/
+
 @media (min-width: 800px) and (max-width: 1024px) {
-    body{
+    body {
         font-size: 15px;
     }
-    #contenidotexto{
+
+    #contenidotexto {
         margin-bottom: 5%;
     }
-    #contenedorPrincipal{
 
-        
+    #contenedorPrincipal {
+
+
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    #contenedornumeroaleatorio{
-   
-    }
-    #numeroaleatorio{
+
+    #contenedornumeroaleatorio {}
+
+    #numeroaleatorio {
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         width: 100%;
     }
-    #prueba{
+
+    #prueba {
         display: flex;
-    align-items: center;
-    justify-content:center;
-    flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
     }
-    #numerosalidos{
+
+    #numerosalidos {
         width: 70%;
-        
+
     }
+
     #contenedorcartones {
         box-sizing: border-box;
         display: flex;
@@ -406,22 +447,28 @@ display: flex;
         overflow-y: auto;
         font-size: 20px;
     }
+
     #contenedorcartones div {
-        margin:3px ; /* O el valor que desees */
-        padding: 3px; /* O el valor que desees */
+        margin: 3px;
+        /* O el valor que desees */
+        padding: 3px;
+        /* O el valor que desees */
     }
-    
+
     .contenido {
         flex: 1;
         width: 100%;
     }
+
     #yaaparecidos {
         border: 2px solid white;
         display: flex;
         flex-wrap: wrap;
-        max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+        max-width: 100%;
+        /* Cambiado a 100% para ocupar todo el ancho disponible */
         max-height: 200px;
         overflow-y: auto;
         gap: 1%;
     }
 }
+/*--------------------- FIN INICIO RESPONSIVE PARA TABLET -------------------------------*/

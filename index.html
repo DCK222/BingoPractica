@@ -13,7 +13,9 @@
 </head>
 
 <body>
+    <!-- ESTILOS PARA EL HEADER -->
     <header>
+        <!-- AÑADIMOS DIV PARA EL LOGO -->
         <div id="logo">
             <img width="80px" src="assets/img/pngwing.com.png" alt="Logo">
 
@@ -23,6 +25,7 @@
             <div></div>
             <div></div>
         </div>
+        <!-- AÑADIMOS UN NAV PARA LOS ICONOS DE LAS RRSS -->
         <nav id="menu">
             <a href=""><i class="bi bi-github"></i></a>
             <a href=""><i class="bi bi-linkedin"></i></a>
@@ -30,29 +33,36 @@
         </nav>
 
     </header>
-
+    <!-- CREAMOS IN DIV PARA EL BANNER INICIAL DEL NOMBRE DEL BINGO -->
     <div id="banner">
         <div id="contenidotexto">
+            <!-- CONTENIDO DEL BANNER -->
             <h1 id="titulo"><span class="destacado">DCK</span><span class="normal">BINGO</span></h1>
 
         </div>
 
     </div>
     <section>
+        <!-- CREMOS DIVS PARA LA COLOCACION DE LOS COMPONENTES DE LA PAGINA -->
         <div id="contenedorPrincipal">
             <div id="numeroaleatorio">
+                <!-- CONTENEDOR PARA EL NUMERO ALEATORIO -->
                 <div id="contendornumeroaleatorio">
                     <div id="prueba">
+                        <!-- CONTENEDOR PARA LA BOLA DEL BINGO -->
                         <div id="bolacolor">
                             <div id="numaleatorio2">
+                                <!-- DENTRO AÑADIMOS EL NUMERO INICIAL DEL CONTADOR -->
                                 <h3 id="numaleatorio">0</h3>
                             </div>
                         </div>
+                        <!-- CREMOS UN CONTENEDOR PARA LOS BOTONES DE INICIO DEL CONTADOR  -->
                         <div id="contendorbotones">
                             <button id="startButton" onclick="startGeneracion()"><img width="35px"
                                     src="assets/img/play-1003-svgrepo-com.svg" alt=""></button>
                         </div>
                     </div>
+                    <!-- CREAMOS UN SELECT PARA LA SELECCION DE LOS CARTONES Y OTRO PARA REINICIAR EL BINGO -->
                     <div id="CuantosCartones">
                         <h1 id="seleccionar">Selecciona los Cartones : </h1>
                         <select id="cartonSelect" name="select" onchange="generarCartones()">
@@ -62,22 +72,26 @@
                             <option value="4">4 cartones</option>
                             <option value="5">5 cartones</option>
                         </select>
+                        <!-- LLAMANDO A LA FUNCION RESETJUEGO -->
                         <button id="resetButton" onclick="resetJuego()">Reiniciar</button>
                     </div>
+                    <!-- CREAMOS UN DIV PARA QUE APAREZCAN LOS NUMEROS QUE SALEN EN EL GENERADOR DE NUMEROS ALEATORIOS -->
                     <div id="numerosalidos">
-
                         <h1 id="seleccionar">Numeros : </h1>
+                        <!-- LOS NUMEROS SALIDOS APARECEN -->
                         <div id="yaaparecidos"></div>
                     </div>
                 </div>
             </div>
+            <!-- CREAMOS EL DIV CANTAR PARA QUE CUANDO SALTE LINEA O BINGO SALGA EN EL DIV CANTAE -->
             <div id="cantar">
 
             </div>
 
+            <!-- CREAMOS EL CONTENEDOR PARA LOS CARTONES CON SCROLLBAR  -->
             <div id="contenedorcartones">
                 <div id="cartones">
-                    <!-- ... tu contenido existente ... -->
+                    <!-- EN ESTE DIV APARECEN LOS CARTONES -->
                 </div>
             </div>
         </div>
@@ -85,5 +99,5 @@
 </body>
 
 </html>
-<script src="numaleatorio.js"></script>
+<!-- INSERTAMOS EL SCRIPT PARA QUE SE EJECUTE EL CODIGO JS -->
 <script src="assets/archivo.js"></script>
