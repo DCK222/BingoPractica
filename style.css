@@ -89,7 +89,7 @@ nav a {
 }
 
 #cartonSelect {
-    background-color: #00d5ff00;
+    background-color: #00000057;
     border: 3px solid white;
     border-radius: 5px;
     color: #ffffff;
@@ -100,7 +100,7 @@ nav a {
 
 /* ESTILOS PARA EL BOTON DE RESET */
 #resetButton {
-    background-color: #00d5ff00;
+    background-color: #00000062;
     border: 3px solid white;
     border-radius: 5px;
     color: #ffffff;

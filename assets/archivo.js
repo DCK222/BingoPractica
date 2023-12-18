@@ -138,7 +138,7 @@ function generarCartones() {
     for (var i = 1; i <= numCartones; i++) {
         var nuevoCarton = document.createElement("div");
         nuevoCarton.id = "cartonseccion" + i;
-        // PONEMOS RANGOS EN PARA CADA FILA DE LOS CARTONES Y CREAMOS UN "NUEVOCARTON"
+        // PONEMOS RANGOS EN PARA CADA FILA DE LOS CARTONES , AÑADIMOS CUENTOS Y CREAMOS UN "NUEVOCARTON"
         nuevoCarton.innerHTML = `
         <div class="clasecarton carton${i}">
             <div class="fila" id="fila1">
